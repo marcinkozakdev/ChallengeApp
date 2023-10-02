@@ -1,6 +1,4 @@
-﻿//Zadanie domowe - dzień 4
-
-string name = "Ewa";
+﻿string name = "Ewa";
 char sex = 'K';
 int age = 29;
 
