@@ -1,18 +1,23 @@
-﻿string name = "Ewa";
-char sex = 'K';
-int age = 29;
+﻿int number = 4566;
+string numberInString = number.ToString();
+char[] letters = numberInString.ToArray();
+int[] caunters = new int[10];
+char[] numbers = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 
-if (sex == 'K' && age < 30)
+Console.WriteLine("Wyniki dla liczby: " + number);
+
+foreach (char letter in letters)
 {
-    Console.WriteLine("Kobieta poniżej 30 lat");
+    for (int i = 0; i < caunters.Length; i++)
+    {
+        if (letter == numbers[i])
+        {
+            caunters[i]++;
+        }
+    }
 }
 
-else if (name == "Ewa" && age == 33)
+for (int i = 0; i < caunters.Length; i++)
 {
-    Console.WriteLine("Ewa, lat 33");
-}
-
-else if (sex == 'M' && age < 18 )
-{
-    Console.WriteLine("Niepełnoletni mężczyzna");
+    Console.WriteLine(numbers[i] + " => " + caunters[i]);
 }
