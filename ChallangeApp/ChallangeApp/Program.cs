@@ -1,23 +1,36 @@
-﻿int number = 4566;
-string numberInString = number.ToString();
-char[] letters = numberInString.ToArray();
-int[] caunters = new int[10];
-char[] numbers = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+﻿using ChallangeApp;
 
-Console.WriteLine("Wyniki dla liczby: " + number);
+var employee1 = new Employee("Jan", "Kowalski", 29);
+var employee2 = new Employee("Adam", "Lewandowski", 35);
+var employee3 = new Employee("Marek", "Nowak", 50);
 
-foreach (char letter in letters)
+employee1.AddScore(6);
+employee1.AddScore(6);
+employee1.AddScore(6);
+employee1.AddScore(6);
+employee1.AddScore(6);
+
+employee2.AddScore(7);
+employee2.AddScore(7);
+employee2.AddScore(7);
+employee2.AddScore(7);
+employee2.AddScore(7);
+
+employee3.AddScore(8);
+employee3.AddScore(8);
+employee3.AddScore(8);
+employee3.AddScore(8);
+employee3.AddScore(8);
+
+if(employee1.Result > employee2.Result && employee2.Result > employee3.Result)
 {
-    for (int i = 0; i < caunters.Length; i++)
-    {
-        if (letter == numbers[i])
-        {
-            caunters[i]++;
-        }
-    }
+    employee2.Print();
 }
-
-for (int i = 0; i < caunters.Length; i++)
+else if(employee2.Result > employee3.Result)
 {
-    Console.WriteLine(numbers[i] + " => " + caunters[i]);
+    employee2.Print();
+}
+else
+{
+    employee3.Print();
 }
