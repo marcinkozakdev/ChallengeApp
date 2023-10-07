@@ -1,6 +1,6 @@
 namespace ChallangeApp.Tests
 {
-    public class Tests
+    public class EmployeeTests
     {
         [Test]
         public void WhenEmployeeCollectTwoScores_ShouldCorrectResult()
@@ -20,6 +20,7 @@ namespace ChallangeApp.Tests
         [Test]
         public void WhenEmployeeCollectDifferentScores_ShouldCorrectResult()
         {
+            // arrange
             var employee = new Employee("Name", "Surname", 30);
             employee.AddScore(5);
             employee.AddScore(-2);
