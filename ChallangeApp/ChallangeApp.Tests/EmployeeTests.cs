@@ -7,8 +7,8 @@ namespace ChallangeApp.Tests
         {
             // arrange
             var employee = new Employee("Name","Surname",30);
-            employee.AddScore(5);
-            employee.AddScore(6);
+            employee.AddGrade(5);
+            employee.AddGrade(6);
 
             // act
             var result = employee.Result;
@@ -22,11 +22,11 @@ namespace ChallangeApp.Tests
         {
             // arrange
             var employee = new Employee("Name", "Surname", 30);
-            employee.AddScore(5);
-            employee.AddScore(-2);
-            employee.AddScore(0);
-            employee.AddScore(10);
-            employee.AddScore(-6);
+            employee.AddGrade(5);
+            employee.AddGrade(-2);
+            employee.AddGrade(0);
+            employee.AddGrade(10);
+            employee.AddGrade(-6);
 
             // act
             var result = employee.Result;
