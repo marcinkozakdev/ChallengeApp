@@ -8,7 +8,6 @@ namespace ChallangeApp
 
         public string Name { get; private set; }
         public string Surname { get; private set; }
-        public int Age { get; private set; }
         public int Grade { get; private set; }
         public int Result
         {
@@ -18,24 +17,15 @@ namespace ChallangeApp
             }
         }
 
-        public Employee(string name, string surname, int age)
+        public Employee(string name, string surname)
         {
             this.Name = name;
             this.Surname = surname;
-            this.Age = age;
         }
 
         public void AddGrade(int score)
         {
             this.grades.Add(score);
-        }
-
-        public void Print()
-        {
-            Console.WriteLine("Pracownik z najwyższą liczbą ocen: ");
-            Console.WriteLine("Imię i Nazwisko: " + Name + " " + Surname);
-            Console.WriteLine("Wiek: " + Age);
-            Console.WriteLine("Wynik: " + Result);
         }
 
         public Statistics GetStatistics()

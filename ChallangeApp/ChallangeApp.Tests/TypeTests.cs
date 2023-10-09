@@ -39,16 +39,16 @@
         public void WhenEmployesNotEqual_ShouldCorrectResult()
         {
             // arrange
-            Employee employee1 = GetEmployee("Adam", "Kamizelich", 30);
-            Employee employee2 = GetEmployee("Adam", "Kamizelich", 30);
+            Employee employee1 = GetEmployee("Adam", "Kamizelich");
+            Employee employee2 = GetEmployee("Adam", "Kamizelich");
 
             // assert
             Assert.AreNotEqual(employee1, employee2);
         }
 
-        private Employee GetEmployee(string name, string surname, int age)
+        private Employee GetEmployee(string name, string surname)
         {
-            return new Employee(name, surname, age);
+            return new Employee(name, surname);
         }
     }
 }
