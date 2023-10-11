@@ -6,7 +6,7 @@ namespace ChallangeApp.Tests
         public void WhenEmployeeCollectTwoScores_ShouldCorrectResult()
         {
             // arrange
-            var employee = new Employee("Name","Surname");
+            var employee = new Employee("Name", "Surname");
             employee.AddGrade(5);
             employee.AddGrade(6);
 
@@ -36,14 +36,14 @@ namespace ChallangeApp.Tests
         }
 
         [Test]
-        public void TestOfMinValue()
+        public void WhenGetStatisticsCalled_ShouldReturnCorrectMin()
         {
             // arrange
             var employee = new Employee("Marcin", "Marciniak");
             employee.AddGrade(5);
             employee.AddGrade(3);
             employee.AddGrade(7);
-            
+
             // act
             var statistics = employee.GetStatistics();
 
@@ -52,7 +52,7 @@ namespace ChallangeApp.Tests
         }
 
         [Test]
-        public void TestOfMaxValue()
+        public void WhenGetStatisticsCalled_ShouldReturnCorrectMax()
         {
             // arrange
             var employee = new Employee("Marcin", "Marciniak");
@@ -68,19 +68,19 @@ namespace ChallangeApp.Tests
         }
 
         [Test]
-        public void TestOfArrangeValue()
+        public void WhenGetStatisticsCalled_ShouldReturnCorrectAverage()
         {
             // arrange
             var employee = new Employee("Marcin", "Marciniak");
-            employee.AddGrade(5);
-            employee.AddGrade(3);
-            employee.AddGrade(7);
+            employee.AddGrade(2);
+            employee.AddGrade(2);
+            employee.AddGrade(6);
 
             // act
             var statistics = employee.GetStatistics();
 
             // assert
-            Assert.AreEqual(5, statistics.Average);
+            Assert.AreEqual(Math.Round(3.33, 2), Math.Round(statistics.Average, 2));
         }
     }
 }
