@@ -82,5 +82,38 @@ namespace ChallangeApp.Tests
             // assert
             Assert.AreEqual(Math.Round(3.33, 2), Math.Round(statistics.Average, 2));
         }
+
+        [Test]
+        public void WhenTheGradesArePosted_ReturnTheCorrectAverageLetter()
+        {
+            // arrange
+            var employee = new Employee("Marcin", "Marciniak");
+            employee.AddGrade(20);
+            employee.AddGrade(15);
+            employee.AddGrade(10);
+
+            // act
+            var statistics = employee.GetStatistics();
+
+            // assert
+            Assert.AreEqual('E', statistics.AverageLetter);
+        }
+
+        [Test]
+        public void WhenYouIputLetters_ReturnTheCorrectAverageLetter()
+        {
+            // arrange
+            var employee = new Employee("Marcin", "Marciniak");
+            employee.AddGrade('a');
+            employee.AddGrade('B');
+            employee.AddGrade('c');
+            employee.AddGrade('D');
+
+            // act
+            var statistics = employee.GetStatistics();
+
+            // assert
+            Assert.AreEqual('B', statistics.AverageLetter);
+        }
     }
 }
