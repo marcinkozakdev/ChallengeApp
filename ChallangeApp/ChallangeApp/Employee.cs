@@ -28,29 +28,29 @@ namespace ChallangeApp
 
         public void AddGrade(float grade)
         {
-            if (grade >= -100 && grade <= 100)
+            if (grade > 0 && grade <= 100)
             {
                 this.grades.Add(grade);
             }
             else
             {
-                Console.WriteLine("Invalid grade value");
+                Console.WriteLine($"Invalid argument: {nameof(grade)}. Only from 1 to 100.");
             }
         }
 
         public void AddGrade(string grade)
         {
-            if ((grade.Length == 1) && (char.ToUpper(grade[0]) == 'A' || char.ToUpper(grade[0]) == 'B' || char.ToUpper(grade[0]) == 'C' || char.ToUpper(grade[0]) == 'D' || char.ToUpper(grade[0]) == 'E'))
+            if (float.TryParse(grade, out float result))
             { 
-                this.AddGrade(grade[0]);
-            }
-            else if (float.TryParse(grade, out float result))
-            {
                 this.AddGrade(result);
+            }
+            else if (char.TryParse(grade, out char charResult))
+            {
+                this.AddGrade(charResult);
             }
             else
             {
-                Console.WriteLine("String is not float");
+                Console.WriteLine("String is not float number or char letter.");
             }
         }
 
@@ -76,7 +76,6 @@ namespace ChallangeApp
             {
                 this.AddGrade(result);
             }
-          
         }
 
         public void AddGrade(char grade)

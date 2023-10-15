@@ -18,24 +18,6 @@ namespace ChallangeApp.Tests
         }
 
         [Test]
-        public void WhenEmployeeCollectDifferentScores_ShouldCorrectResult()
-        {
-            // arrange
-            var employee = new Employee("Name", "Surname");
-            employee.AddGrade(5);
-            employee.AddGrade(-2);
-            employee.AddGrade(0);
-            employee.AddGrade(10);
-            employee.AddGrade(-6);
-
-            // act
-            var result = employee.Result;
-
-            // assert
-            Assert.AreEqual(7, result);
-        }
-
-        [Test]
         public void WhenGetStatisticsCalled_ShouldReturnCorrectMin()
         {
             // arrange
