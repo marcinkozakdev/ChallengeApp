@@ -11,11 +11,19 @@ while (true)
     Console.WriteLine("Input next grade of Your Employee: ");
     Console.WriteLine("... if you want to see the statistics press 'q'");
     var input = Console.ReadLine();
-    if(input=="q")
+    if (input == "q")
     {
         break;
     }
-    employee.AddGrade(input);
+
+    try
+    {
+        employee.AddGrade(input);
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine($"Exception catched: {e.Message}");
+    }
 }
 
 Console.WriteLine();

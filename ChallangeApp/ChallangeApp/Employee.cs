@@ -1,7 +1,4 @@
-﻿using System.Diagnostics;
-using System.Net.NetworkInformation;
-
-namespace ChallangeApp
+﻿namespace ChallangeApp
 {
     public class Employee
     {
@@ -34,7 +31,7 @@ namespace ChallangeApp
             }
             else
             {
-                Console.WriteLine($"Invalid argument: {nameof(grade)}. Only from 1 to 100.");
+                throw new Exception($"Invalid argument: {grade}. Only from 1 to 100.");
             }
         }
 
@@ -50,7 +47,7 @@ namespace ChallangeApp
             }
             else
             {
-                Console.WriteLine("String is not float number or char letter.");
+                throw new Exception("String is not float number or char letter.");
             }
         }
 
@@ -102,6 +99,8 @@ namespace ChallangeApp
                 case 'e':
                     AddGrade(20);
                     break;
+                default:
+                    throw new Exception("Wrong Letter");
             }
         }
 
