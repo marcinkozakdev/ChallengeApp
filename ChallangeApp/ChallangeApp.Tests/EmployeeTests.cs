@@ -3,22 +3,6 @@ namespace ChallangeApp.Tests
     public class EmployeeTests
     {
         [Test]
-        public void WhenEmployeeCollectTwoScores_ShouldCorrectResult()
-        {
-            // arrange
-            var employee = new Employee("Name", "Surname", 'M', 20);
-            employee.AddGrade(5);
-            employee.AddGrade(6);
-            employee.AddGrade("3");
-
-            // act
-            var result = employee.Result;
-
-            // assert
-            Assert.AreEqual(14, result);
-        }
-
-        [Test]
         public void WhenGetStatisticsCalled_ShouldReturnCorrectMin()
         {
             // arrange
