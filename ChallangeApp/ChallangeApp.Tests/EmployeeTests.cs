@@ -6,25 +6,29 @@ namespace ChallangeApp.Tests
         public void WhenEmployeeCollectTwoScores_ShouldCorrectResult()
         {
             // arrange
-            var employee = new Employee("Name", "Surname");
+            var employee = new Employee("Name", "Surname", 'M', 20);
             employee.AddGrade(5);
             employee.AddGrade(6);
+            employee.AddGrade("3");
 
             // act
             var result = employee.Result;
 
             // assert
-            Assert.AreEqual(11, result);
+            Assert.AreEqual(14, result);
         }
 
         [Test]
         public void WhenGetStatisticsCalled_ShouldReturnCorrectMin()
         {
             // arrange
-            var employee = new Employee("Marcin", "Marciniak");
+            var employee = new Employee("Marcin", "Marciniak", 'M', 20);
             employee.AddGrade(5);
-            employee.AddGrade(3);
+            employee.AddGrade("3");
             employee.AddGrade(7);
+            employee.AddGrade(5.2f);
+            employee.AddGrade(5.2d);
+
 
             // act
             var statistics = employee.GetStatistics();
@@ -37,10 +41,13 @@ namespace ChallangeApp.Tests
         public void WhenGetStatisticsCalled_ShouldReturnCorrectMax()
         {
             // arrange
-            var employee = new Employee("Marcin", "Marciniak");
+            var employee = new Employee("Marcin", "Marciniak", 'M', 20);
             employee.AddGrade(5);
-            employee.AddGrade(3);
+            employee.AddGrade("3");
             employee.AddGrade(7);
+            employee.AddGrade(5.2f);
+            employee.AddGrade(5.2d);
+
 
             // act
             var statistics = employee.GetStatistics();
@@ -53,25 +60,27 @@ namespace ChallangeApp.Tests
         public void WhenGetStatisticsCalled_ShouldReturnCorrectAverage()
         {
             // arrange
-            var employee = new Employee("Marcin", "Marciniak");
+            var employee = new Employee("Marcin", "Marciniak", 'M', 20);
             employee.AddGrade(2);
-            employee.AddGrade(2);
+            employee.AddGrade("2");
             employee.AddGrade(6);
+            employee.AddGrade(5.2f);
+            employee.AddGrade(2.3d);
 
             // act
             var statistics = employee.GetStatistics();
 
             // assert
-            Assert.AreEqual(Math.Round(3.33, 2), Math.Round(statistics.Average, 2));
+            Assert.AreEqual(Math.Round(3.5, 2), Math.Round(statistics.Average, 2));
         }
 
         [Test]
         public void WhenTheGradesArePosted_ReturnTheCorrectAverageLetter()
         {
             // arrange
-            var employee = new Employee("Marcin", "Marciniak");
+            var employee = new Employee("Marcin", "Marciniak", 'M', 20);
             employee.AddGrade(20);
-            employee.AddGrade(15);
+            employee.AddGrade("15");
             employee.AddGrade(10);
 
             // act
@@ -85,7 +94,7 @@ namespace ChallangeApp.Tests
         public void WhenYouIputLetters_ReturnTheCorrectAverageLetter()
         {
             // arrange
-            var employee = new Employee("Marcin", "Marciniak");
+            var employee = new Employee("Marcin", "Marciniak", 'M', 20);
             employee.AddGrade('a');
             employee.AddGrade('B');
             employee.AddGrade('c');
