@@ -6,7 +6,7 @@ namespace ChallangeApp.Tests
         public void WhenGetStatisticsCalled_ShouldReturnCorrectMin()
         {
             // arrange
-            var employee = new Employee("Marcin", "Marciniak", 'M', 20);
+            var employee = new EmployeeInFile("Marcin", "Marciniak", 'M', 20);
             employee.AddGrade(5);
             employee.AddGrade("3");
             employee.AddGrade(7);
@@ -25,7 +25,7 @@ namespace ChallangeApp.Tests
         public void WhenGetStatisticsCalled_ShouldReturnCorrectMax()
         {
             // arrange
-            var employee = new Employee("Marcin", "Marciniak", 'M', 20);
+            var employee = new EmployeeInFile("Marcin", "Marciniak", 'M', 20);
             employee.AddGrade(5);
             employee.AddGrade("3");
             employee.AddGrade(7);
@@ -44,7 +44,7 @@ namespace ChallangeApp.Tests
         public void WhenGetStatisticsCalled_ShouldReturnCorrectAverage()
         {
             // arrange
-            var employee = new Employee("Marcin", "Marciniak", 'M', 20);
+            var employee = new EmployeeInFile("Marcin", "Marciniak", 'M', 20);
             employee.AddGrade(2);
             employee.AddGrade("2");
             employee.AddGrade(6);
@@ -62,7 +62,7 @@ namespace ChallangeApp.Tests
         public void WhenTheGradesArePosted_ReturnTheCorrectAverageLetter()
         {
             // arrange
-            var employee = new Employee("Marcin", "Marciniak", 'M', 20);
+            var employee = new EmployeeInFile("Marcin", "Marciniak", 'M', 20);
             employee.AddGrade(20);
             employee.AddGrade("15");
             employee.AddGrade(10);
@@ -78,7 +78,7 @@ namespace ChallangeApp.Tests
         public void WhenYouIputLetters_ReturnTheCorrectAverageLetter()
         {
             // arrange
-            var employee = new Employee("Marcin", "Marciniak", 'M', 20);
+            var employee = new EmployeeInFile("Marcin", "Marciniak", 'M', 20);
             employee.AddGrade('a');
             employee.AddGrade('B');
             employee.AddGrade('c');

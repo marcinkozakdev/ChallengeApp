@@ -1,22 +1,13 @@
 ﻿namespace ChallangeApp
 {
-    public class Employee : IEmployee
+    public class EmployeeInMemory : EmployeeBase
     {
-        private List<float> grades = new();
-        public string Name { get; private set; }
-        public string Surname { get; private set; }
-        public char Sex { get; private set; }
-        public int Age { get; private set; }
-
-        public Employee(string name, string surname, char sex, int age)
+        public EmployeeInMemory(string name, string surname, char sex, int age) : base(name, surname, sex, age)
         {
-            this.Name = name;
-            this.Surname = surname;
-            this.Sex = sex;
-            this.Age = age;
         }
+        private List<float> grades = new();
 
-        public void AddGrade(float grade)
+        public override void AddGrade(float grade)
         {
             if (grade > 0 && grade <= 100)
             {
@@ -28,10 +19,10 @@
             }
         }
 
-        public void AddGrade(string grade)
+        public override void AddGrade(string grade)
         {
             if (float.TryParse(grade, out float result))
-            { 
+            {
                 this.AddGrade(result);
             }
             else if (char.TryParse(grade, out char charResult))
@@ -44,7 +35,7 @@
             }
         }
 
-        public void AddGrade(double grade)
+        public override void AddGrade(double grade)
         {
             if (float.TryParse(grade.ToString(), out float result))
             {
@@ -52,7 +43,7 @@
             }
         }
 
-        public void AddGrade(int grade)
+        public override void AddGrade(int grade)
         {
             if (float.TryParse(grade.ToString(), out float result))
             {
@@ -60,7 +51,7 @@
             }
         }
 
-        public void AddGrade(decimal grade)
+        public override void AddGrade(decimal grade)
         {
             if (float.TryParse(grade.ToString(), out float result))
             {
@@ -68,7 +59,7 @@
             }
         }
 
-        public void AddGrade(char grade)
+        public override void AddGrade(char grade)
         {
             switch (grade)
             {
@@ -97,7 +88,7 @@
             }
         }
 
-        public Statistics GetStatistics()
+        public override Statistics GetStatistics()
         {
             var statistics = new Statistics();
 
