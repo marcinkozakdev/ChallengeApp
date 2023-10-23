@@ -4,15 +4,13 @@ Console.WriteLine("Welcome to Employee Evaluation Program");
 Console.WriteLine("==============================================");
 Console.WriteLine();
 
-var employee = new EmployeeInMemory("Marcin", "Kozak", 'M', 29);
+var employee = new EmployeeInFile("Marcin", "Kozak", 'M', 29);
 employee.GradeAdded += EmployeeGradeAdded;
 
 void EmployeeGradeAdded(object sender, EventArgs args)
 {
     Console.WriteLine("New grade added");
 }
-
-employee.AddGrade(0.6f);
 
 while (true)
 {

@@ -3,6 +3,7 @@
     public class EmployeeInMemory : EmployeeBase
     {
         List<float> grades = new List<float>();
+
         public override event GradeAddedDelegate GradeAdded;
 
         public EmployeeInMemory(string name, string surname, char sex, int age) : base(name, surname, sex, age)
@@ -15,7 +16,7 @@
             {
                 this.grades.Add(grade);
 
-                if(GradeAdded != null)
+                if (GradeAdded != null)
                 {
                     GradeAdded(this, new EventArgs());
                 }
@@ -99,36 +100,9 @@
         {
             var statistics = new Statistics();
 
-            statistics.Average = 0;
-            statistics.Max = float.MinValue;
-            statistics.Min = float.MaxValue;
-
             foreach (var grade in this.grades)
             {
-                statistics.Max = Math.Max(statistics.Max, grade);
-                statistics.Min = Math.Min(statistics.Min, grade);
-                statistics.Average += grade;
-            }
-
-            statistics.Average /= this.grades.Count();
-
-            switch (statistics.Average)
-            {
-                case var a when a >= 80:
-                    statistics.AverageLetter = 'A';
-                    break;
-                case var a when a >= 60:
-                    statistics.AverageLetter = 'B';
-                    break;
-                case var a when a >= 40:
-                    statistics.AverageLetter = 'C';
-                    break;
-                case var a when a >= 20:
-                    statistics.AverageLetter = 'D';
-                    break;
-                default:
-                    statistics.AverageLetter = 'E';
-                    break;
+                statistics.AddGrade(grade);
             }
 
             return statistics;
