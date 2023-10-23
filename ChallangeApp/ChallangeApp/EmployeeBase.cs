@@ -7,6 +7,8 @@
         public char Sex { get; private set; }
         public int Age { get; private set; }
 
+        public delegate void GradeAddedDelegate(object sender, EventArgs args);
+        public abstract event GradeAddedDelegate GradeAdded;
 
         public EmployeeBase(string name, string surname, char sex, int age)
         {
